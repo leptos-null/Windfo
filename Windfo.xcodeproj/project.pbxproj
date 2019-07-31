@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA03E82F22F0A81000343D54 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA03E82E22F0A81000343D54 /* README.md */; };
+		FA18289A219A32EA005D5AF8 /* WFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA182899219A32EA005D5AF8 /* WFAppDelegate.m */; };
+		FA18289D219A32EA005D5AF8 /* WFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18289C219A32EA005D5AF8 /* WFViewController.m */; };
+		FA1828A2219A32EB005D5AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1828A1219A32EB005D5AF8 /* Assets.xcassets */; };
+		FA1828A8219A32EB005D5AF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828A7219A32EB005D5AF8 /* main.m */; };
+		FA1828D2219A3CC2005D5AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1828CE219A3CC2005D5AF8 /* Main.storyboard */; };
+		FA1828D3219A3CC2005D5AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1828D0219A3CC2005D5AF8 /* LaunchScreen.storyboard */; };
+		FA2DF6A322EFCFB5003AB8A9 /* AWUnitType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */; };
+		FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */; };
+		FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
+		FA9C8F2022EE1A570025F6DA /* _WFCoalescingFetchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */; };
+		FA9C8F2122EE1A7D0025F6DA /* WFWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828B3219A35E5005D5AF8 /* WFWeatherService.m */; };
+		FA9C8F2222EE1A800025F6DA /* WFLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828B7219A36D9005D5AF8 /* WFLocationService.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA6E70C822D181AB002B4811 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA906D76219BCE9A00519373 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA906DA4219BF1BC00519373 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FA03E82E22F0A81000343D54 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA182895219A32EA005D5AF8 /* Windfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Windfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA182898219A32EA005D5AF8 /* WFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFAppDelegate.h; sourceTree = "<group>"; };
+		FA182899219A32EA005D5AF8 /* WFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFAppDelegate.m; sourceTree = "<group>"; };
+		FA18289B219A32EA005D5AF8 /* WFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFViewController.h; sourceTree = "<group>"; };
+		FA18289C219A32EA005D5AF8 /* WFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFViewController.m; sourceTree = "<group>"; };
+		FA1828A1219A32EB005D5AF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA1828A6219A32EB005D5AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1828A7219A32EB005D5AF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA1828B2219A35E5005D5AF8 /* WFWeatherService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFWeatherService.h; sourceTree = "<group>"; };
+		FA1828B3219A35E5005D5AF8 /* WFWeatherService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFWeatherService.m; sourceTree = "<group>"; };
+		FA1828B6219A36D9005D5AF8 /* WFLocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFLocationService.h; sourceTree = "<group>"; };
+		FA1828B7219A36D9005D5AF8 /* WFLocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFLocationService.m; sourceTree = "<group>"; };
+		FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFWeatherWindModel.m; sourceTree = "<group>"; };
+		FA1828BE219A3BB1005D5AF8 /* WFWeatherWindModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFWeatherWindModel.h; sourceTree = "<group>"; };
+		FA1828CF219A3CC2005D5AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA1828D1219A3CC2005D5AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA2DF6A122EFCFB4003AB8A9 /* AWUnitType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWUnitType.h; sourceTree = "<group>"; };
+		FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWUnitType.m; sourceTree = "<group>"; };
+		FA6E70E222D1B0FA002B4811 /* Ents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ents.plist; sourceTree = "<group>"; };
+		FA9C8F2322EEBD8E0025F6DA /* WFSecretKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WFSecretKeys.h; path = WFSecretKeys.h; sourceTree = "<group>"; };
+		FAA059E5219E2A1F00D1C106 /* _WFCoalescingFetchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _WFCoalescingFetchModel.h; sourceTree = "<group>"; };
+		FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _WFCoalescingFetchModel.m; sourceTree = "<group>"; };
+		FABFCEF1219CE9B000DFD489 /* WFWindForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFWindForecastModel.h; sourceTree = "<group>"; };
+		FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFWindForecastModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA182892219A32EA005D5AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA18288C219A32EA005D5AF8 = {
+			isa = PBXGroup;
+			children = (
+				FA03E82E22F0A81000343D54 /* README.md */,
+				FA182897219A32EA005D5AF8 /* Windfo */,
+				FA182896219A32EA005D5AF8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA182896219A32EA005D5AF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA182895219A32EA005D5AF8 /* Windfo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA182897219A32EA005D5AF8 /* Windfo */ = {
+			isa = PBXGroup;
+			children = (
+				FA1828AE219A348D005D5AF8 /* AppDelegate */,
+				FA1828AF219A349A005D5AF8 /* ViewControllers */,
+				FA1828B5219A35EB005D5AF8 /* Services */,
+				FA1828BC219A3BB1005D5AF8 /* Models */,
+				FA1828CD219A3BDB005D5AF8 /* Storyboards */,
+				FA1828B1219A34CB005D5AF8 /* Resources */,
+			);
+			path = Windfo;
+			sourceTree = "<group>";
+		};
+		FA1828AE219A348D005D5AF8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA182898219A32EA005D5AF8 /* WFAppDelegate.h */,
+				FA182899219A32EA005D5AF8 /* WFAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FA1828AF219A349A005D5AF8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA18289B219A32EA005D5AF8 /* WFViewController.h */,
+				FA18289C219A32EA005D5AF8 /* WFViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA1828B1219A34CB005D5AF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA1828A1219A32EB005D5AF8 /* Assets.xcassets */,
+				FA1828A6219A32EB005D5AF8 /* Info.plist */,
+				FA6E70E222D1B0FA002B4811 /* Ents.plist */,
+				FA1828A7219A32EB005D5AF8 /* main.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FA1828B5219A35EB005D5AF8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA1828B6219A36D9005D5AF8 /* WFLocationService.h */,
+				FA1828B7219A36D9005D5AF8 /* WFLocationService.m */,
+				FA1828B2219A35E5005D5AF8 /* WFWeatherService.h */,
+				FA1828B3219A35E5005D5AF8 /* WFWeatherService.m */,
+				FA9C8F2322EEBD8E0025F6DA /* WFSecretKeys.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA1828BC219A3BB1005D5AF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA2DF6A122EFCFB4003AB8A9 /* AWUnitType.h */,
+				FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */,
+				FA1828BE219A3BB1005D5AF8 /* WFWeatherWindModel.h */,
+				FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */,
+				FABFCEF1219CE9B000DFD489 /* WFWindForecastModel.h */,
+				FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */,
+				FAA059E5219E2A1F00D1C106 /* _WFCoalescingFetchModel.h */,
+				FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA1828CD219A3BDB005D5AF8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA1828CE219A3CC2005D5AF8 /* Main.storyboard */,
+				FA1828D0219A3CC2005D5AF8 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA182894219A32EA005D5AF8 /* Windfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1828AB219A32EB005D5AF8 /* Build configuration list for PBXNativeTarget "Windfo" */;
+			buildPhases = (
+				FA182891219A32EA005D5AF8 /* Sources */,
+				FA182892219A32EA005D5AF8 /* Frameworks */,
+				FA182893219A32EA005D5AF8 /* Resources */,
+				FA906D76219BCE9A00519373 /* Embed App Extensions */,
+				FA906DA4219BF1BC00519373 /* Embed Watch Content */,
+				FA6E70C822D181AB002B4811 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Windfo;
+			productName = Windfo;
+			productReference = FA182895219A32EA005D5AF8 /* Windfo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA18288D219A32EA005D5AF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Leptos;
+				TargetAttributes = {
+					FA182894219A32EA005D5AF8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = FA182890219A32EA005D5AF8 /* Build configuration list for PBXProject "Windfo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA18288C219A32EA005D5AF8;
+			productRefGroup = FA182896219A32EA005D5AF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA182894219A32EA005D5AF8 /* Windfo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA182893219A32EA005D5AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1828D3219A3CC2005D5AF8 /* LaunchScreen.storyboard in Resources */,
+				FA1828A2219A32EB005D5AF8 /* Assets.xcassets in Resources */,
+				FA03E82F22F0A81000343D54 /* README.md in Resources */,
+				FA1828D2219A3CC2005D5AF8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA182891219A32EA005D5AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA18289D219A32EA005D5AF8 /* WFViewController.m in Sources */,
+				FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */,
+				FA1828A8219A32EB005D5AF8 /* main.m in Sources */,
+				FA18289A219A32EA005D5AF8 /* WFAppDelegate.m in Sources */,
+				FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */,
+				FA9C8F2222EE1A800025F6DA /* WFLocationService.m in Sources */,
+				FA9C8F2022EE1A570025F6DA /* _WFCoalescingFetchModel.m in Sources */,
+				FA9C8F2122EE1A7D0025F6DA /* WFWeatherService.m in Sources */,
+				FA2DF6A322EFCFB5003AB8A9 /* AWUnitType.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA1828CE219A3CC2005D5AF8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA1828CF219A3CC2005D5AF8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA1828D0219A3CC2005D5AF8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA1828D1219A3CC2005D5AF8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA1828A9219A32EB005D5AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA1828AA219A32EB005D5AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA1828AC219A32EB005D5AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = Windfo/Ents.plist;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				GCC_WARN_SHADOW = YES;
+				INFOPLIST_FILE = Windfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.Windfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_UIKITFORMAC = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA1828AD219A32EB005D5AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = Windfo/Ents.plist;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_SHADOW = YES;
+				INFOPLIST_FILE = Windfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.Windfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_UIKITFORMAC = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA182890219A32EA005D5AF8 /* Build configuration list for PBXProject "Windfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1828A9219A32EB005D5AF8 /* Debug */,
+				FA1828AA219A32EB005D5AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1828AB219A32EB005D5AF8 /* Build configuration list for PBXNativeTarget "Windfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1828AC219A32EB005D5AF8 /* Debug */,
+				FA1828AD219A32EB005D5AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA18288D219A32EA005D5AF8 /* Project object */;
+}
