@@ -15,6 +15,7 @@
 		FA1828D2219A3CC2005D5AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1828CE219A3CC2005D5AF8 /* Main.storyboard */; };
 		FA1828D3219A3CC2005D5AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1828D0219A3CC2005D5AF8 /* LaunchScreen.storyboard */; };
 		FA2DF6A322EFCFB5003AB8A9 /* AWUnitType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */; };
+		FA59A86A22FF9AA200463A3F /* WFForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */; };
 		FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */; };
 		FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
 		FA9C8F2022EE1A570025F6DA /* _WFCoalescingFetchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */; };
@@ -75,8 +76,10 @@
 		FA1828D1219A3CC2005D5AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2DF6A122EFCFB4003AB8A9 /* AWUnitType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWUnitType.h; sourceTree = "<group>"; };
 		FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWUnitType.m; sourceTree = "<group>"; };
+		FA59A86822FF9AA200463A3F /* WFForecastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFForecastTableViewCell.h; sourceTree = "<group>"; };
+		FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFForecastTableViewCell.m; sourceTree = "<group>"; };
 		FA6E70E222D1B0FA002B4811 /* Ents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ents.plist; sourceTree = "<group>"; };
-		FA9C8F2322EEBD8E0025F6DA /* WFSecretKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WFSecretKeys.h; path = WFSecretKeys.h; sourceTree = "<group>"; };
+		FA9C8F2322EEBD8E0025F6DA /* WFSecretKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFSecretKeys.h; sourceTree = "<group>"; };
 		FAA059E5219E2A1F00D1C106 /* _WFCoalescingFetchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _WFCoalescingFetchModel.h; sourceTree = "<group>"; };
 		FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _WFCoalescingFetchModel.m; sourceTree = "<group>"; };
 		FABFCEF1219CE9B000DFD489 /* WFWindForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFWindForecastModel.h; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 			children = (
 				FA1828AE219A348D005D5AF8 /* AppDelegate */,
 				FA1828AF219A349A005D5AF8 /* ViewControllers */,
+				FA59A86422FF9A2D00463A3F /* Views */,
 				FA1828B5219A35EB005D5AF8 /* Services */,
 				FA1828BC219A3BB1005D5AF8 /* Models */,
 				FA1828CD219A3BDB005D5AF8 /* Storyboards */,
@@ -189,6 +193,15 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		FA59A86422FF9A2D00463A3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA59A86822FF9AA200463A3F /* WFForecastTableViewCell.h */,
+				FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +231,7 @@
 		FA18288D219A32EA005D5AF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WF;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Leptos;
 				TargetAttributes = {
@@ -266,6 +280,7 @@
 				FA18289D219A32EA005D5AF8 /* WFViewController.m in Sources */,
 				FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */,
 				FA1828A8219A32EB005D5AF8 /* main.m in Sources */,
+				FA59A86A22FF9AA200463A3F /* WFForecastTableViewCell.m in Sources */,
 				FA18289A219A32EA005D5AF8 /* WFAppDelegate.m in Sources */,
 				FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */,
 				FA9C8F2222EE1A800025F6DA /* WFLocationService.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "WFViewController.h"
+#import "../Views/WFForecastTableViewCell.h"
 
 @implementation WFViewController
 
@@ -107,29 +108,8 @@
     NSParameterAssert(tableView == self.forecastTableView);
     NSParameterAssert(indexPath.section == 0);
     
-    static NSDateFormatter *dateFormatter;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeStyle = NSDateFormatterShortStyle;
-        // dateFormatter.dateStyle = NSDateFormatterShortStyle;
-        // dateFormatter.doesRelativeDateFormatting = YES;
-        dateFormatter.timeZone = NSTimeZone.localTimeZone;
-        dateFormatter.locale = NSLocale.autoupdatingCurrentLocale;
-        dateFormatter.calendar = NSCalendar.autoupdatingCurrentCalendar;
-    });
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
-    WFWindForecastModel *model = self.forecastModels[indexPath.row];
-    
-    cell.textLabel.text = [dateFormatter stringFromDate:model.date];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.1f G %.1f %@ %.0f %@",
-                                 model.windSpeed, model.gustSpeed, model.localizedSpeedUnit,
-                                 model.windDirection, model.localizedCardinalDirection];
-    
-    cell.detailTextLabel.accessibilityLabel = [NSString stringWithFormat:@"%.1f gusting %.1f %@, %.0f° %@",
-                                               model.windSpeed, model.gustSpeed, model.localizedSpeedAccessibilityUnit,
-                                               model.windDirection, model.localizedCardinalDirection];
+    WFForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[WFForecastTableViewCell reusableIdentifier]];
+    cell.model = self.forecastModels[indexPath.row];
     return cell;
 }
 
@@ -278,7 +258,7 @@
     if (@available(iOS 13.0, *)) {
         strokeColor = UIColor.labelColor;
     } else {
-        strokeColor = UIColor.blackColor;
+        strokeColor = UIColor.darkTextColor;
     }
     
     _compassDrawLayer.strokeColor = strokeColor.CGColor;
