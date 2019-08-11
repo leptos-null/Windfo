@@ -57,8 +57,6 @@
     
     [self _updateCompassStrokeColors];
     
-    self.compassView.accessibilityLabel = @"Relative wind direction";
-    self.compassView.isAccessibilityElement = YES;
     BOOL canShowCompass = CLLocationManager.headingAvailable;
     self.showingCompass = canShowCompass;
     [self.compassForecastControl setEnabled:canShowCompass forSegmentAtIndex:WFCompassForecastSegmentCompass];
@@ -176,17 +174,14 @@
     self.windDirection = currentModel.direction;
     
     self.locationLabel.text = currentModel.localizedLocationName;
-    self.locationLabel.accessibilityLabel = @"Location";
     self.locationLabel.accessibilityValue = currentModel.localizedLocationName;
     self.timeLabel.text = [dateFormatter stringFromDate:currentModel.updateTime];
-    self.timeLabel.accessibilityHint = @"Update Data"; // "Reload Data", "Refresh Data" (?)
     
     BOOL useMetric = NSLocale.currentLocale.usesMetricSystem;
     self.windSpeedLabel.text = [NSString stringWithFormat:@"%.1f G %.1f %@",
         useMetric ? currentModel.metricSpeed : currentModel.imperialSpeed,
         useMetric ? currentModel.metricGust : currentModel.imperialGust,
         useMetric ? currentModel.localizedMetricUnit : currentModel.localizedImperialUnit];
-    self.windSpeedLabel.accessibilityLabel = @"Current";
     self.windSpeedLabel.accessibilityValue = [NSString stringWithFormat:@"%.1f gusting %.1f %@",
         useMetric ? currentModel.metricSpeed : currentModel.imperialSpeed,
         useMetric ? currentModel.metricGust : currentModel.imperialGust,
