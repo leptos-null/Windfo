@@ -187,15 +187,18 @@
 
 - (IBAction)updateLabelsForCurrentLocation {
     CLLocation *location = WFLocationService.sharedService.location;
-    
+    NSDate *start = [NSDate date];
     __weak typeof(self) weakself = self;
     [WFWeatherService windSpeedDirectionForLocation:location locale:nil completion:^(WFWeatherWindModel *model, NSArray<WFWindForecastModel *> *forecast, NSError *error) {
         if (error) {
             NSLog(@"windSpeedDirectionError: %@", error);
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                weakself.currentModel = model;
-                weakself.forecastModels = forecast;
+                if ([weakself.lastUpdateDate timeIntervalSinceDate:start] <= 0) {
+                    weakself.currentModel = model;
+                    weakself.forecastModels = forecast;
+                    weakself.lastUpdateDate = start;
+                }
             });
         }
     }];

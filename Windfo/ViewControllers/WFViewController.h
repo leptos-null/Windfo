@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, WFCompassForecastSegment) {
 @property (strong, nonatomic, readonly) CAShapeLayer *compassDrawLayer;
 @property (strong, nonatomic, readonly) CAShapeLayer *directionDrawLayer;
 
+@property (strong, nonatomic) NSDate *lastUpdateDate;
 @property (strong, nonatomic) WFWeatherWindModel *currentModel;
 @property (strong, nonatomic) NSArray<WFWindForecastModel *> *forecastModels;
 
