@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-#import "../Services/WFWeatherService.h"
+#import "../../WindfoKit/Services/WFWeatherService.h"
 
 typedef NS_ENUM(NSUInteger, WFCompassForecastSegment) {
     WFCompassForecastSegmentCompass,

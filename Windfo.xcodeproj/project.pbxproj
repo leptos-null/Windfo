@@ -101,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				FA03E82E22F0A81000343D54 /* README.md */,
+				FA4A43092330A12600840D14 /* WindfoKit */,
 				FA182897219A32EA005D5AF8 /* Windfo */,
 				FA182896219A32EA005D5AF8 /* Products */,
 			);
@@ -120,8 +121,6 @@
 				FA1828AE219A348D005D5AF8 /* AppDelegate */,
 				FA1828AF219A349A005D5AF8 /* ViewControllers */,
 				FA59A86422FF9A2D00463A3F /* Views */,
-				FA1828B5219A35EB005D5AF8 /* Services */,
-				FA1828BC219A3BB1005D5AF8 /* Models */,
 				FA1828CD219A3BDB005D5AF8 /* Storyboards */,
 				FA1828B1219A34CB005D5AF8 /* Resources */,
 			);
@@ -191,6 +190,15 @@
 				FA1828D0219A3CC2005D5AF8 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA4A43092330A12600840D14 /* WindfoKit */ = {
+			isa = PBXGroup;
+			children = (
+				FA1828B5219A35EB005D5AF8 /* Services */,
+				FA1828BC219A3BB1005D5AF8 /* Models */,
+			);
+			path = WindfoKit;
 			sourceTree = "<group>";
 		};
 		FA59A86422FF9A2D00463A3F /* Views */ = {

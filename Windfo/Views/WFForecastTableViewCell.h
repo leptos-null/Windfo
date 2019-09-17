@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../Models/WFWindForecastModel.h"
+#import "../../WindfoKit/Models/WFWindForecastModel.h"
 
 @interface WFForecastTableViewCell : UITableViewCell
 
