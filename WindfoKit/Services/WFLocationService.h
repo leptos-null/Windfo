@@ -23,10 +23,10 @@ typedef void(^WFHeadingDidChangeCallback)(CLLocationDirection heading);
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;
 
-- (void)startUpdatingHeading API_UNAVAILABLE(macos, watchos, tvos);
-- (void)stopUpdatingHeading API_UNAVAILABLE(macos, watchos, tvos);
+- (void)startUpdatingHeading API_UNAVAILABLE(macos, tvos);
+- (void)stopUpdatingHeading API_UNAVAILABLE(macos, tvos);
 
 - (void)addCallbackForLocationChange:(WFLocationDidChangeCallback)callback;
-- (void)addCallbackForHeadingChange:(WFHeadingDidChangeCallback)callback API_UNAVAILABLE(macos, watchos, tvos);
+- (void)addCallbackForHeadingChange:(WFHeadingDidChangeCallback)callback API_UNAVAILABLE(macos, tvos);
 
 @end

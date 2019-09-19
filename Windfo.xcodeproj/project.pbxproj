@@ -22,6 +22,13 @@
 		FA4A43222330A32100840D14 /* WFExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A43212330A32100840D14 /* WFExtensionDelegate.m */; };
 		FA4A43242330A32100840D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4A43232330A32100840D14 /* Assets.xcassets */; };
 		FA4A43282330A32100840D14 /* WindfoNano.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA4A430C2330A31F00840D14 /* WindfoNano.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA4A43322330AA5A00840D14 /* WFLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828B7219A36D9005D5AF8 /* WFLocationService.m */; };
+		FA4A43332330AA5E00840D14 /* WFWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828B3219A35E5005D5AF8 /* WFWeatherService.m */; };
+		FA4A43342330AA6500840D14 /* AWUnitType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */; };
+		FA4A43352330AA6800840D14 /* WFWeatherWindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */; };
+		FA4A43362330AA6A00840D14 /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
+		FA4A43372330AA6D00840D14 /* _WFCoalescingFetchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */; };
+		FA4A433B23333B8000840D14 /* WFComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A433A23333B8000840D14 /* WFComplicationController.m */; };
 		FA59A86A22FF9AA200463A3F /* WFForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */; };
 		FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */; };
 		FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
@@ -123,6 +130,8 @@
 		FA4A43212330A32100840D14 /* WFExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFExtensionDelegate.m; sourceTree = "<group>"; };
 		FA4A43232330A32100840D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4A43252330A32100840D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA4A433923333B8000840D14 /* WFComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFComplicationController.h; sourceTree = "<group>"; };
+		FA4A433A23333B8000840D14 /* WFComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFComplicationController.m; sourceTree = "<group>"; };
 		FA59A86822FF9AA200463A3F /* WFForecastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFForecastTableViewCell.h; sourceTree = "<group>"; };
 		FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFForecastTableViewCell.m; sourceTree = "<group>"; };
 		FA6E70E222D1B0FA002B4811 /* Ents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ents.plist; sourceTree = "<group>"; };
@@ -273,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4A43302330A55800840D14 /* ExtensionDelegate */,
+				FA4A433823333B5F00840D14 /* ComplicationController */,
 				FA4A43312330A56600840D14 /* InterfaceControllers */,
 				FA4A43232330A32100840D14 /* Assets.xcassets */,
 				FA4A43252330A32100840D14 /* Info.plist */,
@@ -296,6 +306,15 @@
 				FA4A431E2330A32100840D14 /* WFInterfaceController.m */,
 			);
 			path = InterfaceControllers;
+			sourceTree = "<group>";
+		};
+		FA4A433823333B5F00840D14 /* ComplicationController */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A433923333B8000840D14 /* WFComplicationController.h */,
+				FA4A433A23333B8000840D14 /* WFComplicationController.m */,
+			);
+			path = ComplicationController;
 			sourceTree = "<group>";
 		};
 		FA59A86422FF9A2D00463A3F /* Views */ = {
@@ -459,8 +478,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4A43322330AA5A00840D14 /* WFLocationService.m in Sources */,
 				FA4A43222330A32100840D14 /* WFExtensionDelegate.m in Sources */,
 				FA4A431F2330A32100840D14 /* WFInterfaceController.m in Sources */,
+				FA4A43372330AA6D00840D14 /* _WFCoalescingFetchModel.m in Sources */,
+				FA4A43332330AA5E00840D14 /* WFWeatherService.m in Sources */,
+				FA4A433B23333B8000840D14 /* WFComplicationController.m in Sources */,
+				FA4A43342330AA6500840D14 /* AWUnitType.m in Sources */,
+				FA4A43362330AA6A00840D14 /* WFWindForecastModel.m in Sources */,
+				FA4A43352330AA6800840D14 /* WFWeatherWindModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,17 +55,17 @@
     [_locationManager stopUpdatingLocation];
 }
 
-- (void)startUpdatingHeading API_UNAVAILABLE(macos, watchos, tvos) {
+- (void)startUpdatingHeading API_UNAVAILABLE(macos, tvos) {
     [_locationManager startUpdatingHeading];
 }
-- (void)stopUpdatingHeading API_UNAVAILABLE(macos, watchos, tvos) {
+- (void)stopUpdatingHeading API_UNAVAILABLE(macos, tvos) {
     [_locationManager stopUpdatingHeading];
 }
 
 - (void)addCallbackForLocationChange:(WFLocationDidChangeCallback)callback {
     [_locationCallbacks addObject:callback];
 }
-- (void)addCallbackForHeadingChange:(WFHeadingDidChangeCallback)callback API_UNAVAILABLE(macos, watchos, tvos) {
+- (void)addCallbackForHeadingChange:(WFHeadingDidChangeCallback)callback API_UNAVAILABLE(macos, tvos) {
     [_headingCallbacks addObject:callback];
 }
 
@@ -77,7 +77,7 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading API_UNAVAILABLE(macos, watchos, tvos) {
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading API_UNAVAILABLE(macos, tvos) {
     CLLocationDirection const direction = newHeading.trueHeading;
     for (WFHeadingDidChangeCallback callback in _headingCallbacks) {
         callback(direction);
