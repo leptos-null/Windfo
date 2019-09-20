@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,7 +21,7 @@
 		FA4A431F2330A32100840D14 /* WFInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A431E2330A32100840D14 /* WFInterfaceController.m */; };
 		FA4A43222330A32100840D14 /* WFExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A43212330A32100840D14 /* WFExtensionDelegate.m */; };
 		FA4A43242330A32100840D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4A43232330A32100840D14 /* Assets.xcassets */; };
-		FA4A43282330A32100840D14 /* WindfoNano.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA4A430C2330A31F00840D14 /* WindfoNano.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA4A43282330A32100840D14 /* WindfoNano.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA4A430C2330A31F00840D14 /* WindfoNano.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA4A43322330AA5A00840D14 /* WFLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828B7219A36D9005D5AF8 /* WFLocationService.m */; };
 		FA4A43332330AA5E00840D14 /* WFWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828B3219A35E5005D5AF8 /* WFWeatherService.m */; };
 		FA4A43342330AA6500840D14 /* AWUnitType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2DF6A222EFCFB4003AB8A9 /* AWUnitType.m */; };
@@ -29,6 +29,7 @@
 		FA4A43362330AA6A00840D14 /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
 		FA4A43372330AA6D00840D14 /* _WFCoalescingFetchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */; };
 		FA4A433B23333B8000840D14 /* WFComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A433A23333B8000840D14 /* WFComplicationController.m */; };
+		FA4A434123334D0A00840D14 /* WFForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A434023334D0A00840D14 /* WFForecastController.m */; };
 		FA59A86A22FF9AA200463A3F /* WFForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */; };
 		FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */; };
 		FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
@@ -132,6 +133,8 @@
 		FA4A43252330A32100840D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4A433923333B8000840D14 /* WFComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFComplicationController.h; sourceTree = "<group>"; };
 		FA4A433A23333B8000840D14 /* WFComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFComplicationController.m; sourceTree = "<group>"; };
+		FA4A433F23334D0A00840D14 /* WFForecastController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFForecastController.h; sourceTree = "<group>"; };
+		FA4A434023334D0A00840D14 /* WFForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFForecastController.m; sourceTree = "<group>"; };
 		FA59A86822FF9AA200463A3F /* WFForecastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFForecastTableViewCell.h; sourceTree = "<group>"; };
 		FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFForecastTableViewCell.m; sourceTree = "<group>"; };
 		FA6E70E222D1B0FA002B4811 /* Ents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ents.plist; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 			children = (
 				FA4A431D2330A32100840D14 /* WFInterfaceController.h */,
 				FA4A431E2330A32100840D14 /* WFInterfaceController.m */,
+				FA4A433F23334D0A00840D14 /* WFForecastController.h */,
+				FA4A434023334D0A00840D14 /* WFForecastController.m */,
 			);
 			path = InterfaceControllers;
 			sourceTree = "<group>";
@@ -485,6 +490,7 @@
 				FA4A43332330AA5E00840D14 /* WFWeatherService.m in Sources */,
 				FA4A433B23333B8000840D14 /* WFComplicationController.m in Sources */,
 				FA4A43342330AA6500840D14 /* AWUnitType.m in Sources */,
+				FA4A434123334D0A00840D14 /* WFForecastController.m in Sources */,
 				FA4A43362330AA6A00840D14 /* WFWindForecastModel.m in Sources */,
 				FA4A43352330AA6800840D14 /* WFWeatherWindModel.m in Sources */,
 			);
@@ -500,6 +506,7 @@
 		};
 		FA4A43272330A32100840D14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = FA4A430B2330A31F00840D14 /* WindfoNano */;
 			targetProxy = FA4A43262330A32100840D14 /* PBXContainerItemProxy */;
 		};

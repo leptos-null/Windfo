@@ -45,7 +45,9 @@ NSErrorDomain const WFServiceErrorDomain = @"WFServiceErrorDomain";
         [NSURLQueryItem queryItemWithName:@"language" value:locale.languageCode],
         [NSURLQueryItem queryItemWithName:@"details" value:@"true"]
     ];
-    [[NSURLSession.sharedSession dataTaskWithURL:conditionComps.URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSMutableURLRequest *conditionRequest = [NSMutableURLRequest requestWithURL:conditionComps.URL];
+    conditionRequest.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData; // required for watchOS - not sure why
+    [[NSURLSession.sharedSession dataTaskWithRequest:conditionRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             completion(nil, nil, error);
         } else {
@@ -70,7 +72,10 @@ NSErrorDomain const WFServiceErrorDomain = @"WFServiceErrorDomain";
         [NSURLQueryItem queryItemWithName:@"details" value:@"true"],
         [NSURLQueryItem queryItemWithName:@"metric" value:locale.usesMetricSystem ? @"true" : @"false"]
     ];
-    [[NSURLSession.sharedSession dataTaskWithURL:forecastComps.URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    
+    NSMutableURLRequest *forecastRequest = [NSMutableURLRequest requestWithURL:forecastComps.URL];
+    forecastRequest.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData; // required for watchOS - not sure why
+    [[NSURLSession.sharedSession dataTaskWithRequest:forecastRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             completion(nil, nil, error);
         } else {
@@ -114,8 +119,9 @@ NSErrorDomain const WFServiceErrorDomain = @"WFServiceErrorDomain";
         [NSURLQueryItem queryItemWithName:@"apikey" value:kAccuWeatherKey],
         [NSURLQueryItem queryItemWithName:@"language" value:locale.languageCode]
     ];
-    
-    [[NSURLSession.sharedSession dataTaskWithURL:urlComps.URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSMutableURLRequest *locationRequest = [NSMutableURLRequest requestWithURL:urlComps.URL];
+    locationRequest.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData; // required for watchOS - not sure why
+    [[NSURLSession.sharedSession dataTaskWithRequest:locationRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             completion(nil, nil, error);
             return;
