@@ -10,4 +10,10 @@
 
 @implementation WFAppDelegate
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // I can't find it any where in the documentation, but unless this call is here,
+    //   the menu bar is not what's in the storyboard
+    [UIMenuSystem.mainSystem setNeedsRebuild];
+    return YES;
+}
 @end

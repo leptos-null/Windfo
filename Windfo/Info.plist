@@ -29,7 +29,7 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Leptos. All rights reserved.</string>
+	<string>Copyright © 2018 - 2019 Leptos. All rights reserved.</string>
 	<key>UIMenuBarItemTitleAbout</key>
 	<string>About Windfo</string>
 	<key>UIMenuBarItemTitleHide</key>

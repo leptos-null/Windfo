@@ -30,13 +30,6 @@
     NSNotificationCenter *notifCenter = NSNotificationCenter.defaultCenter;
     [notifCenter addObserver:self selector:reloadAction name:NSCurrentLocaleDidChangeNotification object:nil];
     
-    UIKeyCommand *reloadCmd = [UIKeyCommand keyCommandWithInput:@"r" modifierFlags:UIKeyModifierCommand action:reloadAction];
-    reloadCmd.discoverabilityTitle = @"Refresh Data";
-    if (@available(iOS 13.0, *)) {
-        reloadCmd.title = @"Reload";
-    }
-    [self addKeyCommand:reloadCmd];
-    
     // TODO(UI) Look into these line widths
     //   should they adjust to the view size?
     //   should the directionDrawLayer be thinner?

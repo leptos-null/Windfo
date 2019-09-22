@@ -15,4 +15,3 @@ Create `Windfo/Services/WFSecretKeys.h` and define `kAccuWeatherKey` to your API
 ### TODOs
 
 - Localization
-- Show "reload" shortcut in Catalyst menu
