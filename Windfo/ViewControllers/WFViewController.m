@@ -26,9 +26,13 @@
         weakself.currentHeading = heading;
     }];
     
+    UIRefreshControl *tableRefresh = [UIRefreshControl new];
+    self.forecastTableView.refreshControl = tableRefresh;
+    
     SEL const reloadAction = @selector(updateLabelsForCurrentLocation);
     NSNotificationCenter *notifCenter = NSNotificationCenter.defaultCenter;
     [notifCenter addObserver:self selector:reloadAction name:NSCurrentLocaleDidChangeNotification object:nil];
+    [tableRefresh addTarget:self action:reloadAction forControlEvents:UIControlEventValueChanged];
     
     // TODO(UI) Look into these line widths
     //   should they adjust to the view size?
@@ -179,6 +183,11 @@
 // MARK: - Public methods
 
 - (IBAction)updateLabelsForCurrentLocation {
+    UIRefreshControl *tableRefreshControl = self.forecastTableView.refreshControl;
+    if (!tableRefreshControl.refreshing) {
+        [tableRefreshControl beginRefreshing];
+    }
+    
     CLLocation *location = WFLocationService.sharedService.location;
     NSDate *start = [NSDate date];
     __weak typeof(self) weakself = self;
@@ -191,6 +200,7 @@
                     weakself.currentModel = model;
                     weakself.forecastModels = forecast;
                     weakself.lastUpdateDate = start;
+                    [tableRefreshControl endRefreshing];
                 }
             });
         }
