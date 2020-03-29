@@ -30,6 +30,8 @@
 		FA4A433B23333B8000840D14 /* WFComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A433A23333B8000840D14 /* WFComplicationController.m */; };
 		FA4A434123334D0A00840D14 /* WFForecastController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A434023334D0A00840D14 /* WFForecastController.m */; };
 		FA59A86A22FF9AA200463A3F /* WFForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */; };
+		FA645C11242FE4E4007139F3 /* WFArrowRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA645C10242FE4E4007139F3 /* WFArrowRenderer.m */; };
+		FA645C14242FE61D007139F3 /* WFArrowOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA645C13242FE61D007139F3 /* WFArrowOverlay.m */; };
 		FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */; };
 		FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */; };
 		FA9C8F2022EE1A570025F6DA /* _WFCoalescingFetchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */; };
@@ -136,6 +138,11 @@
 		FA4A434023334D0A00840D14 /* WFForecastController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFForecastController.m; sourceTree = "<group>"; };
 		FA59A86822FF9AA200463A3F /* WFForecastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFForecastTableViewCell.h; sourceTree = "<group>"; };
 		FA59A86922FF9AA200463A3F /* WFForecastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFForecastTableViewCell.m; sourceTree = "<group>"; };
+		FA645C0F242FE4E4007139F3 /* WFArrowRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFArrowRenderer.h; sourceTree = "<group>"; };
+		FA645C10242FE4E4007139F3 /* WFArrowRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFArrowRenderer.m; sourceTree = "<group>"; };
+		FA645C12242FE61D007139F3 /* WFArrowOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFArrowOverlay.h; sourceTree = "<group>"; };
+		FA645C13242FE61D007139F3 /* WFArrowOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFArrowOverlay.m; sourceTree = "<group>"; };
+		FA645C15243029C8007139F3 /* WFHeaderArithmetic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFHeaderArithmetic.h; sourceTree = "<group>"; };
 		FA6E70E222D1B0FA002B4811 /* Ents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ents.plist; sourceTree = "<group>"; };
 		FA9C8F2322EEBD8E0025F6DA /* WFSecretKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFSecretKeys.h; sourceTree = "<group>"; };
 		FAA059E5219E2A1F00D1C106 /* _WFCoalescingFetchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _WFCoalescingFetchModel.h; sourceTree = "<group>"; };
@@ -232,7 +239,10 @@
 				FA1828B7219A36D9005D5AF8 /* WFLocationService.m */,
 				FA1828B2219A35E5005D5AF8 /* WFWeatherService.h */,
 				FA1828B3219A35E5005D5AF8 /* WFWeatherService.m */,
+				FA645C0F242FE4E4007139F3 /* WFArrowRenderer.h */,
+				FA645C10242FE4E4007139F3 /* WFArrowRenderer.m */,
 				FA9C8F2322EEBD8E0025F6DA /* WFSecretKeys.h */,
+				FA645C15243029C8007139F3 /* WFHeaderArithmetic.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -246,6 +256,8 @@
 				FA1828BD219A3BB1005D5AF8 /* WFWeatherWindModel.m */,
 				FABFCEF1219CE9B000DFD489 /* WFWindForecastModel.h */,
 				FABFCEF2219CE9B000DFD489 /* WFWindForecastModel.m */,
+				FA645C12242FE61D007139F3 /* WFArrowOverlay.h */,
+				FA645C13242FE61D007139F3 /* WFArrowOverlay.m */,
 				FAA059E5219E2A1F00D1C106 /* _WFCoalescingFetchModel.h */,
 				FAA059E6219E2A1F00D1C106 /* _WFCoalescingFetchModel.m */,
 			);
@@ -395,7 +407,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = WF;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Leptos;
 				TargetAttributes = {
 					FA182894219A32EA005D5AF8 = {
@@ -465,10 +477,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA18289D219A32EA005D5AF8 /* WFViewController.m in Sources */,
+				FA645C14242FE61D007139F3 /* WFArrowOverlay.m in Sources */,
 				FA9C8F1F22EE1A540025F6DA /* WFWindForecastModel.m in Sources */,
 				FA1828A8219A32EB005D5AF8 /* main.m in Sources */,
 				FA59A86A22FF9AA200463A3F /* WFForecastTableViewCell.m in Sources */,
 				FA18289A219A32EA005D5AF8 /* WFAppDelegate.m in Sources */,
+				FA645C11242FE4E4007139F3 /* WFArrowRenderer.m in Sources */,
 				FA9C8F1E22EE1A520025F6DA /* WFWeatherWindModel.m in Sources */,
 				FA9C8F2222EE1A800025F6DA /* WFLocationService.m in Sources */,
 				FA9C8F2022EE1A570025F6DA /* _WFCoalescingFetchModel.m in Sources */,

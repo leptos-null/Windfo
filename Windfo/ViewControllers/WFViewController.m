@@ -8,6 +8,8 @@
 
 #import "WFViewController.h"
 #import "../Views/WFForecastTableViewCell.h"
+#import "../../WindfoKit/Services/WFArrowRenderer.h"
+#import "../../WindfoKit/Services/WFHeaderArithmetic.h"
 
 @implementation WFViewController
 
@@ -25,6 +27,8 @@
     [locationService addCallbackForHeadingChange:^(CLLocationDirection heading) {
         weakself.currentHeading = heading;
     }];
+    
+    self.mapView.camera.altitude = 1000;
     
     UIRefreshControl *tableRefresh = [UIRefreshControl new];
     self.forecastTableView.refreshControl = tableRefresh;
@@ -56,9 +60,11 @@
     [self _updateCompassStrokeColors];
     
     BOOL canShowCompass = CLLocationManager.headingAvailable;
-    self.showingCompass = canShowCompass;
-    [self.compassForecastControl setEnabled:canShowCompass forSegmentAtIndex:WFCompassForecastSegmentCompass];
-    self.compassForecastControl.selectedSegmentIndex = canShowCompass ? WFCompassForecastSegmentCompass : WFCompassForecastSegmentForecast;
+    
+    UISegmentedControl *segmentControl = self.segmentControl;
+    [segmentControl setEnabled:canShowCompass forSegmentAtIndex:WFSegmentIndexCompass];
+    segmentControl.selectedSegmentIndex = canShowCompass ? WFSegmentIndexCompass : WFSegmentIndexMap;
+    [self segmentControlChanged:segmentControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,7 +72,7 @@
     
     WFLocationService *locationService = WFLocationService.sharedService;
     [locationService startUpdatingLocation];
-    if (self.showingCompass) {
+    if (self.segmentControl.selectedSegmentIndex == WFSegmentIndexCompass) {
         [locationService startUpdatingHeading];
     }
     
@@ -114,6 +120,19 @@
     NSParameterAssert(tableView == self.forecastTableView);
     NSParameterAssert(section == 0);
     return self.forecastModels.count;
+}
+
+// MARK: - MKMapViewDelegate
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    if ([overlay isKindOfClass:[WFArrowOverlay class]]) {
+        WFArrowRenderer *renderer = [[WFArrowRenderer alloc] initWithOverlay:overlay];
+        renderer.fillColor = UIColor.systemTealColor;
+        renderer.strokeColor = UIColor.systemBlueColor;
+        renderer.lineWidth = 2;
+        return renderer;
+    }
+    return nil;
 }
 
 // MARK: - Setter overrides
@@ -167,17 +186,15 @@
                                     currentModel.direction, currentModel.localizedCardinalDirection];
 }
 
-- (void)setShowingCompass:(BOOL)showingCompass {
-    _showingCompass = showingCompass;
-    
-    [self updateLabelsForCurrentLocation];
-    if (showingCompass) {
-        [WFLocationService.sharedService startUpdatingHeading];
-    } else {
-        [WFLocationService.sharedService stopUpdatingHeading];
+- (void)setArrowOverlay:(WFArrowOverlay *)arrowOverlay {
+    MKMapView *mapView = self.mapView;
+    WFArrowOverlay *previousOverlay = self.arrowOverlay;
+    if (previousOverlay) {
+        [mapView removeOverlay:previousOverlay];
     }
-    self.compassView.hidden = !showingCompass;
-    self.forecastTableView.hidden = showingCompass;
+    
+    _arrowOverlay = arrowOverlay;
+    [mapView addOverlay:arrowOverlay level:MKOverlayLevelAboveRoads];
 }
 
 // MARK: - Public methods
@@ -200,6 +217,15 @@
                     weakself.currentModel = model;
                     weakself.forecastModels = forecast;
                     weakself.lastUpdateDate = start;
+                    
+                    WFArrowOverlay *arrow = [[WFArrowOverlay alloc] initWithCenter:location.coordinate];
+                    // `direction` is where the wind is coming from,
+                    // but we want to point in the direction the wind is going
+                    arrow.arrowDirection = self.currentModel.direction - WFDegreesInCircle/2;
+                    weakself.arrowOverlay = arrow;
+                    
+                    weakself.mapView.camera.centerCoordinate = location.coordinate;
+                    
                     [tableRefreshControl endRefreshing];
                 }
             });
@@ -207,13 +233,27 @@
     }];
 }
 
-- (IBAction)compassForecastControlChanged:(UISegmentedControl *)segmentControl {
+- (IBAction)segmentControlChanged:(UISegmentedControl *)segmentControl {
+    [self updateLabelsForCurrentLocation];
+    
     switch (segmentControl.selectedSegmentIndex) {
-        case WFCompassForecastSegmentCompass:
-            self.showingCompass = YES;
+        case WFSegmentIndexCompass:
+            [WFLocationService.sharedService startUpdatingHeading];
+            self.compassView.hidden = NO;
+            self.mapView.hidden = YES;
+            self.forecastTableView.hidden = YES;
             break;
-        case WFCompassForecastSegmentForecast:
-            self.showingCompass = NO;
+        case WFSegmentIndexMap:
+            [WFLocationService.sharedService stopUpdatingHeading];
+            self.compassView.hidden = YES;
+            self.mapView.hidden = NO;
+            self.forecastTableView.hidden = YES;
+            break;
+        case WFSegmentIndexForecast:
+            [WFLocationService.sharedService stopUpdatingHeading];
+            self.compassView.hidden = YES;
+            self.mapView.hidden = YES;
+            self.forecastTableView.hidden = NO;
             break;
         default:
             NSLog(@"Unknown segmentIndex: %@", segmentControl);
@@ -225,9 +265,9 @@
 
 - (void)rotateCompassForDirections {
     CLLocationDirection heading = self.windDirection - self.currentHeading; // (-360, +360)
-    heading -= 360*floor(heading/360); // [0, 360) equivalent
-    heading -= 180; // [180, 180) other way
-    double headingRadians = heading * M_PI/180;
+    heading = constrictValueBound(heading, WFDegreesInCircle); // [0, 360) equivalent
+    heading -= WFDegreesInCircle/2; // [180, 180) other way
+    double headingRadians = d2r(heading);
     self.compassView.transform = CGAffineTransformMakeRotation(headingRadians);
     
     self.compassView.accessibilityValue = [NSString stringWithFormat:@"%.0f° %@",

@@ -6,17 +6,19 @@
 //  Copyright © 2018 Leptos. All rights reserved.
 //
 
-@import UIKit;
+#import <MapKit/MapKit.h>
 
 #import "../../WindfoKit/Services/WFWeatherService.h"
+#import "../../WindfoKit/Models/WFArrowOverlay.h"
 
-typedef NS_ENUM(NSUInteger, WFCompassForecastSegment) {
-    WFCompassForecastSegmentCompass,
-    WFCompassForecastSegmentForecast,
-    WFCompassForecastSegmentCaseCount
+typedef NS_ENUM(NSUInteger, WFSegmentIndex) {
+    WFSegmentIndexCompass,
+    WFSegmentIndexMap,
+    WFSegmentIndexForecast,
+    WFSegmentIndexCaseCount
 };
 
-@interface WFViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface WFViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
@@ -24,9 +26,10 @@ typedef NS_ENUM(NSUInteger, WFCompassForecastSegment) {
 @property (strong, nonatomic) IBOutlet UILabel *windSpeedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *windDirectionLabel;
 
-@property (strong, nonatomic) IBOutlet UISegmentedControl *compassForecastControl;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 @property (strong, nonatomic) IBOutlet UIView *compassView;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *forecastTableView;
 
 @property (nonatomic) CLLocationDirection windDirection;
@@ -38,8 +41,7 @@ typedef NS_ENUM(NSUInteger, WFCompassForecastSegment) {
 @property (strong, nonatomic) NSDate *lastUpdateDate;
 @property (strong, nonatomic) WFWeatherWindModel *currentModel;
 @property (strong, nonatomic) NSArray<WFWindForecastModel *> *forecastModels;
-
-@property (nonatomic) BOOL showingCompass;
+@property (strong, nonatomic) WFArrowOverlay *arrowOverlay;
 
 - (void)updateLabelsForCurrentLocation;
 
