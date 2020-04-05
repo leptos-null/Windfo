@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA154F37243984C100984476 /* WFIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA154F36243984C100984476 /* WFIAppDelegate.m */; };
+		FA154F3D243984C100984476 /* WFIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA154F3C243984C100984476 /* WFIViewController.m */; };
+		FA154F48243984C300984476 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA154F47243984C300984476 /* main.m */; };
+		FA154F5624398A5C00984476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA154F5224398A5C00984476 /* LaunchScreen.storyboard */; };
+		FA154F5724398A5C00984476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA154F5424398A5C00984476 /* Main.storyboard */; };
 		FA18289A219A32EA005D5AF8 /* WFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA182899219A32EA005D5AF8 /* WFAppDelegate.m */; };
 		FA18289D219A32EA005D5AF8 /* WFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18289C219A32EA005D5AF8 /* WFViewController.m */; };
 		FA1828A2219A32EB005D5AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1828A1219A32EB005D5AF8 /* Assets.xcassets */; };
@@ -103,6 +108,15 @@
 
 /* Begin PBXFileReference section */
 		FA03E82E22F0A81000343D54 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA154F33243984C100984476 /* Winficon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winficon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA154F35243984C100984476 /* WFIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFIAppDelegate.h; sourceTree = "<group>"; };
+		FA154F36243984C100984476 /* WFIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFIAppDelegate.m; sourceTree = "<group>"; };
+		FA154F3B243984C100984476 /* WFIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFIViewController.h; sourceTree = "<group>"; };
+		FA154F3C243984C100984476 /* WFIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFIViewController.m; sourceTree = "<group>"; };
+		FA154F46243984C300984476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA154F47243984C300984476 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA154F5324398A5C00984476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Winficon/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		FA154F5524398A5C00984476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Winficon/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		FA182895219A32EA005D5AF8 /* Windfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Windfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA182898219A32EA005D5AF8 /* WFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFAppDelegate.h; sourceTree = "<group>"; };
 		FA182899219A32EA005D5AF8 /* WFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFAppDelegate.m; sourceTree = "<group>"; };
@@ -152,6 +166,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FA154F30243984C100984476 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA182892219A32EA005D5AF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +190,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA154F34243984C100984476 /* Winficon */ = {
+			isa = PBXGroup;
+			children = (
+				FA154F4F243986B800984476 /* AppDelegate */,
+				FA154F50243986C700984476 /* ViewControllers */,
+				FA154F51243986E000984476 /* Storyboards */,
+				FA154F4D2439861500984476 /* Resources */,
+			);
+			path = Winficon;
+			sourceTree = "<group>";
+		};
+		FA154F4D2439861500984476 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA154F46243984C300984476 /* Info.plist */,
+				FA154F47243984C300984476 /* main.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FA154F4F243986B800984476 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA154F35243984C100984476 /* WFIAppDelegate.h */,
+				FA154F36243984C100984476 /* WFIAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FA154F50243986C700984476 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA154F3B243984C100984476 /* WFIViewController.h */,
+				FA154F3C243984C100984476 /* WFIViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA154F51243986E000984476 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA154F5424398A5C00984476 /* Main.storyboard */,
+				FA154F5224398A5C00984476 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FA18288C219A32EA005D5AF8 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +246,7 @@
 				FA182897219A32EA005D5AF8 /* Windfo */,
 				FA4A430D2330A31F00840D14 /* WindfoNano */,
 				FA4A431C2330A32100840D14 /* WindfoNanoExt */,
+				FA154F34243984C100984476 /* Winficon */,
 				FA182896219A32EA005D5AF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,6 +257,7 @@
 				FA182895219A32EA005D5AF8 /* Windfo.app */,
 				FA4A430C2330A31F00840D14 /* WindfoNano.app */,
 				FA4A43182330A32100840D14 /* WindfoNanoExt.appex */,
+				FA154F33243984C100984476 /* Winficon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -345,6 +416,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FA154F32243984C100984476 /* Winficon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA154F4B243984C300984476 /* Build configuration list for PBXNativeTarget "Winficon" */;
+			buildPhases = (
+				FA154F2F243984C100984476 /* Sources */,
+				FA154F30243984C100984476 /* Frameworks */,
+				FA154F31243984C100984476 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Winficon;
+			productName = Winficon;
+			productReference = FA154F33243984C100984476 /* Winficon.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FA182894219A32EA005D5AF8 /* Windfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA1828AB219A32EB005D5AF8 /* Build configuration list for PBXNativeTarget "Windfo" */;
@@ -410,6 +498,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Leptos;
 				TargetAttributes = {
+					FA154F32243984C100984476 = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					FA182894219A32EA005D5AF8 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -437,11 +528,21 @@
 				FA182894219A32EA005D5AF8 /* Windfo */,
 				FA4A430B2330A31F00840D14 /* WindfoNano */,
 				FA4A43172330A32100840D14 /* WindfoNanoExt */,
+				FA154F32243984C100984476 /* Winficon */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FA154F31243984C100984476 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA154F5624398A5C00984476 /* LaunchScreen.storyboard in Resources */,
+				FA154F5724398A5C00984476 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA182893219A32EA005D5AF8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +573,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FA154F2F243984C100984476 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA154F3D243984C100984476 /* WFIViewController.m in Sources */,
+				FA154F37243984C100984476 /* WFIAppDelegate.m in Sources */,
+				FA154F48243984C300984476 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA182891219A32EA005D5AF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,6 +636,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FA154F5224398A5C00984476 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA154F5324398A5C00984476 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA154F5424398A5C00984476 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA154F5524398A5C00984476 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		FA1828CE219A3CC2005D5AF8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -552,6 +679,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FA154F49243984C300984476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				INFOPLIST_FILE = Winficon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.Winficon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		FA154F4A243984C300984476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				INFOPLIST_FILE = Winficon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.Winficon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
 		FA1828A9219A32EB005D5AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -604,7 +775,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -643,6 +816,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -653,8 +827,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -666,15 +842,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
 				INFOPLIST_FILE = Windfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.Windfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -685,17 +860,15 @@
 				CODE_SIGN_ENTITLEMENTS = Windfo/Ents.plist;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Windfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.Windfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -716,7 +889,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -737,7 +909,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -754,7 +925,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -771,13 +941,21 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FA154F4B243984C300984476 /* Build configuration list for PBXNativeTarget "Winficon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA154F49243984C300984476 /* Debug */,
+				FA154F4A243984C300984476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FA182890219A32EA005D5AF8 /* Build configuration list for PBXProject "Windfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
