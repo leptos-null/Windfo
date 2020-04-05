@@ -8,6 +8,7 @@
 
 #import "WFInterfaceController.h"
 #import "WFForecastController.h"
+#import "../../WindfoKit/Services/WFHeaderArithmetic.h"
 
 @implementation WFInterfaceController
 
@@ -183,9 +184,9 @@
 
 - (void)rotateCompassForDirections {
     CLLocationDirection heading = self.windDirection - self.currentHeading; // (-360, +360)
-    heading -= 360*floor(heading/360); // [0, 360) equivalent
-    heading -= 180; // [180, 180) other way
-    double headingRadians = heading * M_PI/180;
+    heading = constrictValueBound(heading, WFDegreesInCircle); // [0, 360) equivalent
+    heading -= WFDegreesInCircle/2; // [-180, 180) other way
+    double headingRadians = d2r(heading);
     
     self.compassImage.accessibilityValue = [NSString stringWithFormat:@"%.0f° %@",
                                             fabs(heading), signbit(heading) ? @"left" : @"right"];
