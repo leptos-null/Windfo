@@ -44,38 +44,38 @@
     stroke.lineCapStyle = kCGLineCapRound;
     
     /* Arc: (126, 546) -> (254, 418) */
-    [stroke addArcWithCenter:CGPointMake(254 * canvasFactor, 546 * canvasFactor)
+    [stroke addArcWithCenter:CGPointMake(254 * canvasFactor + offset, 546 * canvasFactor + offset)
                       radius:(128 * canvasFactor) startAngle:(M_PI_2 * 2) endAngle:(M_PI_2 * 3) clockwise:YES];
     
     /* Arc: (608, 418) -> (608, 158) */
-    [stroke addArcWithCenter:CGPointMake(608 * canvasFactor, 288 * canvasFactor)
+    [stroke addArcWithCenter:CGPointMake(608 * canvasFactor + offset, 288 * canvasFactor + offset)
                       radius:(130 * canvasFactor) startAngle:(M_PI_2 * 1) endAngle:(M_PI_2 * 3) clockwise:NO];
     
-    [stroke moveToPoint:CGPointMake(448 * canvasFactor, 352 * canvasFactor)];
-    [stroke addLineToPoint:CGPointMake(548 * canvasFactor, 352 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(448 * canvasFactor + offset, 352 * canvasFactor + offset)];
+    [stroke addLineToPoint:CGPointMake(548 * canvasFactor + offset, 352 * canvasFactor + offset)];
     
-    [stroke moveToPoint:CGPointMake(546 * canvasFactor, 286 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(546 * canvasFactor + offset, 286 * canvasFactor + offset)];
     /* Arc: (546, 286) -> (611, 351) */
-    [stroke addArcWithCenter:CGPointMake(611 * canvasFactor, 286 * canvasFactor)
+    [stroke addArcWithCenter:CGPointMake(611 * canvasFactor + offset, 286 * canvasFactor + offset)
                       radius:(65 * canvasFactor) startAngle:(M_PI_2 * 2) endAngle:(M_PI_2 * 1) clockwise:YES];
     
-    [stroke moveToPoint:CGPointMake(254 * canvasFactor, 482 * canvasFactor)];
-    [stroke addLineToPoint:CGPointMake(758 * canvasFactor, 482 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(254 * canvasFactor + offset, 482 * canvasFactor + offset)];
+    [stroke addLineToPoint:CGPointMake(758 * canvasFactor + offset, 482 * canvasFactor + offset)];
     
-    [stroke moveToPoint:CGPointMake(318 * canvasFactor, 546 * canvasFactor)];
-    [stroke addLineToPoint:CGPointMake(904 * canvasFactor, 546 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(318 * canvasFactor + offset, 546 * canvasFactor + offset)];
+    [stroke addLineToPoint:CGPointMake(904 * canvasFactor + offset, 546 * canvasFactor + offset)];
     
-    [stroke moveToPoint:CGPointMake(398 * canvasFactor, 610 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(398 * canvasFactor + offset, 610 * canvasFactor + offset)];
     /* Arc: (722, 610) -> (722, 870) */
-    [stroke addArcWithCenter:CGPointMake(722 * canvasFactor, 740 * canvasFactor)
+    [stroke addArcWithCenter:CGPointMake(722 * canvasFactor + offset, 740 * canvasFactor + offset)
                       radius:(130 * canvasFactor) startAngle:(M_PI_2 * 3) endAngle:(M_PI_2 * 1) clockwise:YES];
     
-    [stroke moveToPoint:CGPointMake(528 * canvasFactor, 676 * canvasFactor)];
-    [stroke addLineToPoint:CGPointMake(630 * canvasFactor, 676 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(528 * canvasFactor + offset, 676 * canvasFactor + offset)];
+    [stroke addLineToPoint:CGPointMake(630 * canvasFactor + offset, 676 * canvasFactor + offset)];
     
-    [stroke moveToPoint:CGPointMake(725 * canvasFactor, 675 * canvasFactor)];
+    [stroke moveToPoint:CGPointMake(725 * canvasFactor + offset, 675 * canvasFactor + offset)];
     /* Arc: (725, 675) -> (660, 740) */
-    [stroke addArcWithCenter:CGPointMake(725 * canvasFactor, 740 * canvasFactor)
+    [stroke addArcWithCenter:CGPointMake(725 * canvasFactor + offset, 740 * canvasFactor + offset)
                       radius:(65 * canvasFactor) startAngle:(M_PI_2 * 3) endAngle:(M_PI_2 * 2) clockwise:YES];
     
     [stroke stroke];
@@ -128,7 +128,7 @@
     NSString *projectRoot = file.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent;
     NSString *mobileSet = [projectRoot stringByAppendingPathComponent:@"Windfo/Assets.xcassets/AppIcon.appiconset"];
     NSString *nanoSet = [projectRoot stringByAppendingPathComponent:@"WindfoNano/Assets.xcassets/AppIcon.appiconset"];
-    [self writeIconAssetsForIconSet:mobileSet inset:YES];
+    [self writeIconAssetsForIconSet:mobileSet inset:NO];
     [self writeIconAssetsForIconSet:nanoSet inset:NO];
 }
 
