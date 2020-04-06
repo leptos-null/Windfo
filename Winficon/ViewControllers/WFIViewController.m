@@ -16,9 +16,18 @@
 #   error This tool is not for public use
 #endif
 
+typedef NS_ENUM(NSUInteger, WFIBackgroundStyle) {
+    /// Fill the entire background
+    WFIBackgroundStyleFill,
+    /// Fill a circle inside the inset
+    WFIBackgroundStyleCircle,
+    /// No fill
+    WFIBackgroundStyleGlyph,
+};
+
 @implementation WFIViewController
 
-- (UIImage *)iconForDimension:(CGFloat)dimension scale:(CGFloat)scale inset:(BOOL)inset fill:(BOOL)fillBackground {
+- (UIImage *)iconForDimension:(CGFloat)dimension scale:(CGFloat)scale inset:(BOOL)inset background:(WFIBackgroundStyle)style {
     CGFloat const offset = inset ? dimension/16 : 0;
     CGRect const fullFrame = CGRectMake(0, 0, dimension, dimension);
     dimension -= (offset * 2);
@@ -29,11 +38,18 @@
     [[UIColor blackColor] setFill];
     [[UIColor whiteColor] setStroke];
     
-    if (fillBackground) {
-        [[UIBezierPath bezierPathWithRect:fullFrame] fill];
+    UIBezierPath *fillPath = nil;
+    switch (style) {
+        case WFIBackgroundStyleFill:
+            fillPath = [UIBezierPath bezierPathWithRect:fullFrame];
+            break;
+        case WFIBackgroundStyleCircle:
+            fillPath = [UIBezierPath bezierPathWithOvalInRect:frame];
+            break;
+        default:
+            break;
     }
-    
-    [[UIBezierPath bezierPathWithOvalInRect:frame] fill];
+    [fillPath fill];
     
     UIBezierPath *stroke = [UIBezierPath bezierPath];
     
@@ -112,13 +128,121 @@
         
         NSString *fileName = [NSString stringWithFormat:@"AppIcon%@@%@.png", size, scale];
         BOOL fill = [fillIdioms containsObject:image[@"idiom"]];
-        UIImage *render = [self iconForDimension:numSize.doubleValue scale:numScale.doubleValue inset:inset fill:fill];
+        WFIBackgroundStyle style = fill ? WFIBackgroundStyleFill : WFIBackgroundStyleCircle;
+        UIImage *render = [self iconForDimension:numSize.doubleValue scale:numScale.doubleValue inset:inset background:style];
         NSData *fileData = UIImagePNGRepresentation(render);
         assert([fileData writeToFile:[appiconset stringByAppendingPathComponent:fileName] atomically:YES]);
         image[@"filename"] = fileName;
     }
     NSData *serial = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     assert([serial writeToFile:manifest atomically:YES]);
+}
+
+// return a string because it's used in the file name.
+// if a float is returned, the caller would be responsible formatting into a string
+- (NSString *)_sizeForComplicationRole:(NSString *)role screen:(NSString *)screenWidth {
+    // https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/complication-images/
+    // as of early April 2020
+    //   "<=145" -> 38mm
+    //   ">161" -> 40mm
+    //   ">145" -> 42mm
+    //   ">183" -> 44mm
+    NSDictionary<NSString *, NSDictionary<NSString *, NSString *> *> *lookup = @{
+        @"circular" : @{
+                @"<=145" : @"16",
+                @">161"  : @"18",
+                @">145"  : @"18",
+                @">183"  : @"20",
+        },
+        @"extra-large" : @{
+                @"<=145" : @"91",
+                @">161"  : @"101.5",
+                @">145"  : @"101.5",
+                @">183"  : @"112",
+        },
+        @"graphic-bezel" : @{
+                @"<=145" : @"42",
+                @">161"  : @"42",
+                @">145"  : @"42",
+                @">183"  : @"47",
+        },
+        @"graphic-circular" : @{
+                @"<=145" : @"42",
+                @">161"  : @"42",
+                @">145"  : @"42",
+                @">183"  : @"47",
+        },
+        @"graphic-corner" : @{
+                @"<=145" : @"20",
+                @">161"  : @"20",
+                @">145"  : @"20",
+                @">183"  : @"22",
+        },
+        @"graphic-large-rectangular" : @{ /* not square */
+                @"<=145" : @"20", /* 75x47 */
+                @">161"  : @"47", /* 150x47 */
+                @">145"  : @"47", /* 150x47 */
+                @">183"  : @"54", /* 171x54 */
+        },
+        @"modular" : @{
+                @"<=145" : @"26",
+                @">161"  : @"29",
+                @">145"  : @"29",
+                @">183"  : @"32",
+        },
+        @"utilitarian" : @{
+                @"<=145" : @"20",
+                @">161"  : @"22",
+                @">145"  : @"22",
+                @">183"  : @"25",
+        }
+    };
+    NSDictionary *family = lookup[role];
+    assert(family != nil);
+    NSString *screen = family[screenWidth];
+    assert(screen != nil);
+    return screen;
+}
+
+- (void)_writeComplicationGlyphForImageSet:(NSString *)imageSet role:(NSString *)role {
+    NSString *manifest = [imageSet stringByAppendingPathComponent:@"Contents.json"];
+    NSData *parse = [NSData dataWithContentsOfFile:manifest];
+    NSError *error = nil;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:parse options:(NSJSONReadingMutableContainers) error:&error];
+    for (NSMutableDictionary<NSString *, NSString *> *image in dict[@"images"]) {
+        NSString *scale = image[@"scale"];
+        assert(scale != nil);
+        NSInteger scaleLastIndex = scale.length - 1;
+        assert([scale characterAtIndex:scaleLastIndex] == 'x');
+        NSString *numScale = [scale substringToIndex:scaleLastIndex];
+        
+        NSString *screenWidth = image[@"screen-width"];
+        if (screenWidth == nil) {
+            continue;
+        }
+        NSString *size = [self _sizeForComplicationRole:role screen:screenWidth];
+        
+        NSString *fileName = [NSString stringWithFormat:@"AppGlyph%1$@x%1$@@%2$@.png", size, scale];
+        WFIBackgroundStyle style = WFIBackgroundStyleGlyph;
+        UIImage *render = [self iconForDimension:size.doubleValue scale:numScale.doubleValue inset:NO background:style];
+        NSData *fileData = UIImagePNGRepresentation(render);
+        assert([fileData writeToFile:[imageSet stringByAppendingPathComponent:fileName] atomically:YES]);
+        image[@"filename"] = fileName;
+    }
+    NSData *serial = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    assert([serial writeToFile:manifest atomically:YES]);
+}
+
+// e.g. "Assets.xcassets/Complication.complicationset"
+- (void)writeIconAssetsForComplicationSet:(NSString *)complicationset {
+    NSString *manifest = [complicationset stringByAppendingPathComponent:@"Contents.json"];
+    NSData *parse = [NSData dataWithContentsOfFile:manifest];
+    NSError *error = nil;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:parse options:0 error:&error];
+    for (NSDictionary *asset in dict[@"assets"]) {
+        NSString *imageset = [complicationset stringByAppendingPathComponent:asset[@"filename"]];
+        [self _writeComplicationGlyphForImageSet:imageset role:asset[@"role"]];
+    }
 }
 
 - (void)viewDidLoad {
@@ -128,8 +252,11 @@
     NSString *projectRoot = file.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent;
     NSString *mobileSet = [projectRoot stringByAppendingPathComponent:@"Windfo/Assets.xcassets/AppIcon.appiconset"];
     NSString *nanoSet = [projectRoot stringByAppendingPathComponent:@"WindfoNano/Assets.xcassets/AppIcon.appiconset"];
+    NSString *glyphSet = [projectRoot stringByAppendingPathComponent:@"WindfoNanoExt/Assets.xcassets/"
+                          "Complication.complicationset"];
     [self writeIconAssetsForIconSet:mobileSet inset:NO];
     [self writeIconAssetsForIconSet:nanoSet inset:NO];
+    [self writeIconAssetsForComplicationSet:glyphSet];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -137,7 +264,8 @@
     
     UIImageView *imageView = self.iconView;
     CGRect const rect = imageView.frame;
-    imageView.image = [self iconForDimension:fmin(rect.size.width, rect.size.height) scale:0 inset:NO fill:NO];
+    WFIBackgroundStyle style = WFIBackgroundStyleCircle;
+    imageView.image = [self iconForDimension:fmin(rect.size.width, rect.size.height) scale:0 inset:NO background:style];
 }
 
 @end

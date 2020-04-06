@@ -2,25 +2,25 @@
   "images" : [
     {
       "idiom" : "watch",
-      "filename" : "Glyph-52.png",
+      "filename" : "AppGlyph26x26@2x.png",
       "screen-width" : "<=145",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "filename" : "Glyph-58.png",
+      "filename" : "AppGlyph29x29@2x.png",
       "screen-width" : ">161",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "filename" : "Glyph-58.png",
+      "filename" : "AppGlyph29x29@2x.png",
       "screen-width" : ">145",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "filename" : "Glyph-64.png",
+      "filename" : "AppGlyph32x32@2x.png",
       "screen-width" : ">183",
       "scale" : "2x"
     }
