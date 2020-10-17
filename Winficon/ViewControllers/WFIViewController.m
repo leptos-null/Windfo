@@ -178,6 +178,12 @@ typedef NS_ENUM(NSUInteger, WFIBackgroundStyle) {
                 @">145"  : @"20",
                 @">183"  : @"22",
         },
+        @"graphic-extra-large" : @{
+                @"<=145" : @"103",
+                @">161"  : @"120",
+                @">145"  : @"120",
+                @">183"  : @"132",
+        },
         @"graphic-large-rectangular" : @{ /* not square */
                 @"<=145" : @"20", /* 75x47 */
                 @">161"  : @"47", /* 150x47 */
