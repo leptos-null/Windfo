@@ -77,7 +77,7 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading API_UNAVAILABLE(macos, tvos) {
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading API_UNAVAILABLE(tvos) {
     CLLocationDirection const direction = newHeading.trueHeading;
     for (WFHeadingDidChangeCallback callback in _headingCallbacks) {
         callback(direction);

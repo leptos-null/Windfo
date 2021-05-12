@@ -266,7 +266,7 @@
 - (void)rotateCompassForDirections {
     CLLocationDirection heading = self.windDirection - self.currentHeading; // (-360, +360)
     heading = constrictValueBound(heading, WFDegreesInCircle); // [0, 360) equivalent
-    heading -= WFDegreesInCircle/2; // [180, 180) other way
+    heading -= WFDegreesInCircle/2; // [-180, 180) other way
     double headingRadians = d2r(heading);
     self.compassView.transform = CGAffineTransformMakeRotation(headingRadians);
     

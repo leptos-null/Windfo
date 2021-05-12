@@ -6,7 +6,7 @@
 //  Copyright © 2019 Leptos. All rights reserved.
 //
 
-#import <WatchKit/WatchKit.h>
+#import <ClockKit/ClockKit.h>
 
 @interface WFComplicationController : NSObject <CLKComplicationDataSource>
 
